@@ -1,4 +1,7 @@
 <?php
+error_reporting(0);
+
+
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -31,6 +34,8 @@ $app->get('/testbot/', function (Request $request, Response $response, array $ar
     ControllerApiTelegram::sendMessage("Testando ChatBot de Amanda");
     
     $response->getBody()->write("Enviando mensagem para o chatbot!");
+
+    return $response;
 });
 
 $app->run();
